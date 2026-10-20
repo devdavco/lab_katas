@@ -19,21 +19,20 @@ public class Kata1 {
 
         sc.close();
 
-        if(porcentajePropina>30){
-
-        }
 
         if(porcentajePropina < 0 || porcentajePropina > 100){
             porceentajeValido = false;
             mensajeError = "Error: porcentaje inválido";
+        }else if(porcentajePropina>30){
+            mensajePropina = "¡Propina generosa!";
+        }else if( porcentajePropina < 5){
+            mensajePropina = "Propina muy baja";
         }
+
         if(total_cuenta < 0){
             totalValido = false;
             mensajeError = "Error: total inválido";
         }
-
-
-
         if(totalValido && porceentajeValido){
             int calcularPropina = porcentajePropina * total_cuenta/100;
             int costoTotal= total_cuenta+ calcularPropina;
@@ -42,8 +41,6 @@ public class Kata1 {
         }else {
             System.out.println(mensajeError);
         }
-
-
 
     }
 
